@@ -4,5 +4,5 @@ public class ThingsILearned {
 //        2. dekho aur kitne variation, and refactoring kr skte ho. no that ki it just worked
 //        3. in java, character array and string are different. u cant create a string when declaring for character array.
 //        4. while loop can be changed to recursion and vice versa
-//        5. Quick Select Algorithm when u have to partition into two part (for example smaller element on left side and larger on the right side)
+//        5. Quick Select Algorithm when u have to partition into two part (for example smaller element on left side and larger on the right side), counting sort can also be used when range is small, see problem Kth Smallest element, and Sort012 for example
 }
