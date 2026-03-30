@@ -1,26 +1,23 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-
 public class Test {
     public static void main(String[] args) {
-        int[] a = {1, 2, 3, 2, 1};
-        int[] b = {3, 2, 2, 3, 3, 2};
+        int[] arr = {5, -3, 7, 6, 5};
 
-        Set<Integer> s = new HashSet<>();
+        int n = arr.length;
 
-        for(int it : a){
-            s.add(it);
+        int[] summation = new int[n];
+
+        int sum = 0;
+        for(int i=0; i<n; i++){
+            sum += arr[i];
+            summation[i] = sum;
         }
 
-        for(int it : b){
-            s.add(it);
+        int mini = 0;
+
+        int res = Integer.MIN_VALUE;
+        for(int it : summation){
+            res = Integer.max(res, it - mini);
+            mini = Integer.min(mini, it);
         }
-
-        ArrayList<Integer> res = new ArrayList<>(s);
-
-
-
     }
 }
