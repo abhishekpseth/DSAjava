@@ -2,7 +2,7 @@ package Array;
 
 import java.util.*;
 
-public class ReverseArray {
+public class Ques7_ReverseArray {
     // Method 1: keep swapping elements ith element from start with i'th element from end till mid
     public static void reverseString1(char[] s) {
         for(int i=0; i<s.length/2; i++){
