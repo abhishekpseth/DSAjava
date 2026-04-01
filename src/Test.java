@@ -1,23 +1,44 @@
-public class Test {
-    public static void main(String[] args) {
-        int[] arr = {5, -3, 7, 6, 5};
+import java.util.Arrays;
 
+public class Test {
+    public static int getMinDiff(int[] arr, int k) {
+        // code here
         int n = arr.length;
 
-        int[] summation = new int[n];
+        Arrays.sort(arr);
 
-        int sum = 0;
-        for(int i=0; i<n; i++){
-            sum += arr[i];
-            summation[i] = sum;
+        for(int it : arr) {
+            System.out.print(it + " ");
+        }
+        System.out.println("\n");
+        System.out.println("--------------");
+
+        int smallest = arr[0] + k;
+        int largest = arr[n-1] - k;
+
+        int res = Math.abs(largest - smallest);
+
+        System.out.println(" initial res : " + res);
+
+        for(int i=1; i<n-1; i++){
+            int mi = Integer.min(smallest, arr[i+1] - k);
+            int ma = Integer.max(largest, arr[i] + k);
+
+            System.out.println("mi : "+ mi + " ma : "+ ma);
+
+            if(mi < 0)continue;
+
+            res = Integer.min(res, (ma - mi));
         }
 
-        int mini = 0;
+        return res;
+    }
 
-        int res = Integer.MIN_VALUE;
-        for(int it : summation){
-            res = Integer.max(res, it - mini);
-            mini = Integer.min(mini, it);
-        }
+    public static void main(String[] args) {
+        int[] arr = {  1}; int k = 7;
+
+        int x = getMinDiff(arr, k);
+
+        System.out.println("ans : " + x);
     }
 }
