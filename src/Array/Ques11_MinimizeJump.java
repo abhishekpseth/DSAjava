@@ -1,6 +1,6 @@
-import java.util.Arrays;
+package Array;
 
-public class Test {
+public class Ques11_MinimizeJump {
     public static int minJumps(int[] arr) {
         // code here
         int n = arr.length;
@@ -10,12 +10,12 @@ public class Test {
         while(lastJumpPos < (n-1)){
             reach = Math.max(reach, i + arr[i]);
 
-            System.out.println("reach : "+ reach);
-
+            // it can't go any further
             if(reach == i) {
                 return -1;
             }
 
+            // it has reached to end of its current reach
             if(i == lastJumpPos){
                 lastJumpPos = reach;
                 jump++;
