@@ -5,9 +5,10 @@ public class Ques11_MinimizeJump {
         // code here
         int n = arr.length;
 
-        int i=0; int lastJumpPos = 0; int jump = 0; int reach = 0;
+        int lastJumpPos = 0; int jump = 0; int reach = 0;
 
-        while(lastJumpPos < (n-1)){
+        // going till second last only since our target is last element
+        for(int i = 0; i < n - 1; i++) {
             reach = Math.max(reach, i + arr[i]);
 
             // it can't go any further
@@ -21,10 +22,11 @@ public class Ques11_MinimizeJump {
                 jump++;
             }
 
-            i++;
+            // if the last jump pos crosses the limit then break
+            if(lastJumpPos >= n-1)break;
         }
 
-        return lastJumpPos >= n-1 ? jump : -1;
+        return jump;
     }
 
     public static void main(String[] args) {
