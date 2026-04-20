@@ -6,5 +6,5 @@ public class ThingsILearned {
 //        4. while loop can be changed to recursion and vice versa
 //        5. Quick Select Algorithm when u have to partition into two part (for example smaller element on left side and larger on the right side), counting sort can also be used when range is small, see problem Kth Smallest element, and Sort012 for example, this is also called Hoare's partition
 //        6. Binary search like flow can also be used - check problem sort012
-
+//        7. According to the Pigeonhole Principle, n+1 integers, placed in an array of length n, at least 1 integer will be repeated.
 }
