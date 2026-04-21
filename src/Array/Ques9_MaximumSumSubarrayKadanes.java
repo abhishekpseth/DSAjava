@@ -28,6 +28,43 @@ public class Ques9_MaximumSumSubarrayKadanes {
         return res;
     }
 
+    // Method 2: If you observe, you don't actually need the summation array
+    public static int maxSubarraySum2(int[] arr) {
+        // Code here
+        int n = arr.length;
+
+        int sum = 0;
+        int mini = 0;
+        int ans = Integer.MIN_VALUE;
+
+        for (int it : arr) {
+            sum = sum + it;
+            ans = Math.max(ans, sum - mini);
+            mini = Math.min(mini, sum);
+        }
+
+        return ans;
+    }
+
+    // Method 3: Iterate through the array, for each element, if the sum is negative, then make it zero, then add the current element to it.
+    // now answer should be max of ans and sum.
+
+    public static int maxSubarraySum3(int[] arr) {
+        // Code here
+        int n = arr.length;
+
+        int sum = 0;
+        int ans = Integer.MIN_VALUE;
+
+        for(int i=0; i<n; i++){
+            if(sum < 0) sum = 0;
+            sum += arr[i];
+            ans = Math.max(ans, sum);
+        }
+
+        return ans;
+    }
+
     public static void main(String[] args) {
         int[] arr = {5, -3, 7, 6, 5};
 
