@@ -17,7 +17,7 @@ public class Ques16_CountInversions {
             if (arr[i] <= arr[j]) {
                 temp[k++] = arr[i++];
             } else {
-                count += (mid-i+1);
+                count += (mid-i+1); // since left half is sorted: arr[i] <= arr[i+1] <= arr[i+2] ... <= arr[mid], If arr[i] > arr[j], then: arr[i+1], arr[i+2], ..., arr[mid]  > arr[j]
                 temp[k++] = arr[j++];
             }
         }
