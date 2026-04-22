@@ -18,8 +18,8 @@ public class Ques18_TwoSum {
             int val = entry.getValue();
 
             if(key == 0 && val > 1){
-                // res.add(Arrays.asList(0, 0));
-                res.add(new ArrayList<>(Arrays.asList(0, 0)));
+                // res.add(Arrays.asList(0, 0)); The list returned by Arrays.asList() is fixed-size.
+                res.add(new ArrayList<>(Arrays.asList(0, 0))); // dynamic size, you can update later
             } else if(key < 0){
                 Integer pos = (-1)*key;
                 Integer neg = key;

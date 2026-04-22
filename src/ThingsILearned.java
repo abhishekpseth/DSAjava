@@ -7,4 +7,10 @@ public class ThingsILearned {
 //        5. Quick Select Algorithm when u have to partition into two part (for example smaller element on left side and larger on the right side), counting sort can also be used when range is small, see problem Kth Smallest element, and Sort012 for example, this is also called Hoare's partition
 //        6. Binary search like flow can also be used - check problem sort012
 //        7. According to the Pigeonhole Principle, n+1 integers, placed in an array of length n, at least 1 integer will be repeated.
+//        List<Integer> list = Arrays.asList(0, 0);
+//        list.add(1);    // ❌ UnsupportedOperationException
+//        list.remove(0); // ❌ UnsupportedOperationException
+//        Quick rule of thumb
+//        Use Arrays.asList() → for read-only / fixed-size
+//        Wrap with new ArrayList<>(...) → for fully modifiable
 }
