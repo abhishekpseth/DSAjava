@@ -1,37 +1,30 @@
-import java.util.Arrays;
+import java.util.*;
 
 public class Test {
-    public static int minJumps(int[] arr) {
+    public static ArrayList<ArrayList<Integer>> countFreq(int[] arr) {
         // code here
-        int n = arr.length;
+        Map<Integer, Integer> mp = new HashMap<>();
 
-        int i=0; int lastJumpPos = 0; int jump = 0; int reach = 0;
-
-        while(lastJumpPos < (n-1)){
-            reach = Math.max(reach, i + arr[i]);
-
-            System.out.println("reach : "+ reach);
-
-            if(reach == i) {
-                return -1;
-            }
-
-            if(i == lastJumpPos){
-                lastJumpPos = reach;
-                jump++;
-            }
-
-            i++;
+        for(int it : arr) {
+            mp.put(it, mp.getOrDefault(it, 0) + 1);
         }
 
-        return lastJumpPos >= n-1 ? jump : -1;
+        ArrayList<ArrayList<Integer>> res = new ArrayList<>();
+
+        // another way using mp.forEach
+        mp.forEach((key, value) -> {
+            ArrayList<Integer> entry = new ArrayList<>();
+            entry.add(key);
+            entry.add(value);
+            res.add(entry);
+        });
+
+        return res;
     }
 
     public static void main(String[] args) {
         int[] arr = {1, 2, 0, 0, 0};
 
-        int x = minJumps(arr);
-
-        System.out.println("ans : " + x);
+        countFreq(arr);
     }
 }

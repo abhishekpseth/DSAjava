@@ -13,4 +13,12 @@ public class ThingsILearned {
 //        Quick rule of thumb
 //        Use Arrays.asList() → for read-only / fixed-size
 //        Wrap with new ArrayList<>(...) → for fully modifiable
+
+
+//    Data Type [1, 2, 3, 4, 5]	Property / Method	            Syntax Example
+//    String	                    length() method	            str.length()
+//    Array	                    length variable	                arr.length
+//    ArrayList / List	        size() method	                list.size()
+
+
 }
